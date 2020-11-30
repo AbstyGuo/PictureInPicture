@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import <AVKit/AVKit.h>
 
-@interface ViewController ()
+@interface ViewController ()<AVPictureInPictureControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *startBtn;
 
@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *playerView;
 
+@property(nonatomic,strong) AVPictureInPictureController * picController;
+
 @end
 
 @implementation ViewController
@@ -25,6 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
     // 获取图片
     UIImage * startImage = [AVPictureInPictureController pictureInPictureButtonStartImageCompatibleWithTraitCollection:nil];
     UIImage * endImage = [AVPictureInPictureController pictureInPictureButtonStopImageCompatibleWithTraitCollection:nil];
@@ -50,7 +55,8 @@
 
     NSLog(@"---------------%@",NSStringFromCGRect(layer.bounds));
 
-    
+    self.picController = [[AVPictureInPictureController alloc] initWithPlayerLayer:layer];
+    self.picController.delegate = self;
     [self.player play];
 
 }
@@ -62,8 +68,52 @@
 }
 
 - (IBAction)startClick:(id)sender {
+    if (self.picController.isPictureInPicturePossible) {
+        [self.picController startPictureInPicture];
+    }
+    else
+    {
+        NSLog(@"picture is not possible");
+    }
 }
 - (IBAction)endClick:(id)sender {
+    [self.picController stopPictureInPicture];
 }
+
+
+#pragma mark - delegate
+
+- (void)pictureInPictureControllerWillStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController
+{
+    
+}
+
+
+- (void)pictureInPictureControllerDidStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController
+{
+    
+}
+
+
+- (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController failedToStartPictureInPictureWithError:(NSError *)error
+{
+    NSLog(@"%@",error);
+}
+
+
+- (void)pictureInPictureControllerWillStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController
+{
+    
+}
+- (void)pictureInPictureControllerDidStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController
+{
+    
+}
+- (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(void (^)(BOOL restored))completionHandler
+{
+    
+}
+
+
 
 @end
