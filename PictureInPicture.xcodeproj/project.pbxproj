@@ -16,6 +16,7 @@
 		E073557825752D450059964F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E073557725752D450059964F /* main.m */; };
 		E073558225752D450059964F /* PictureInPictureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E073558125752D450059964F /* PictureInPictureTests.m */; };
 		E073558D25752D450059964F /* PictureInPictureUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E073558C25752D450059964F /* PictureInPictureUITests.m */; };
+		E07355A4257536E70059964F /* ani01fad87700.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E07355A3257536E70059964F /* ani01fad87700.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		E073558825752D450059964F /* PictureInPictureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictureInPictureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E073558C25752D450059964F /* PictureInPictureUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureInPictureUITests.m; sourceTree = "<group>"; };
 		E073558E25752D450059964F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E07355A3257536E70059964F /* ani01fad87700.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ani01fad87700.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				E073556925752D430059964F /* SceneDelegate.m */,
 				E073556B25752D430059964F /* ViewController.h */,
 				E073556C25752D430059964F /* ViewController.m */,
+				E07355A3257536E70059964F /* ani01fad87700.mp4 */,
 				E073556E25752D430059964F /* Main.storyboard */,
 				E073557125752D450059964F /* Assets.xcassets */,
 				E073557325752D450059964F /* LaunchScreen.storyboard */,
@@ -241,6 +244,7 @@
 			files = (
 				E073557525752D450059964F /* LaunchScreen.storyboard in Resources */,
 				E073557225752D450059964F /* Assets.xcassets in Resources */,
+				E07355A4257536E70059964F /* ani01fad87700.mp4 in Resources */,
 				E073557025752D430059964F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
